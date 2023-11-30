@@ -1,4 +1,7 @@
-package Lab02.AimsProject.src;//
+package AimsProject.src;
+
+
+import java.util.ArrayList;
 
 public class Aims {
 
@@ -12,9 +15,15 @@ public class Aims {
         anOrder.addDigitalVideoDisc(dvd2);
         anOrder.addDigitalVideoDisc(dvd3);
         anOrder.addDigitalVideoDisc(dvd4);
-        System.out.println("Total cost is: " + anOrder.totalCost());
+//        System.out.println("Total cost is: " + anOrder.totalCost());
         anOrder.removeDigitalVideoDisc(dvd1);
         anOrder.removeDigitalVideoDisc(dvd3);
-        System.out.println("Total cost is: " + anOrder.totalCost());
+//        System.out.println("Total cost is: " + anOrder.totalCost());
+
+        ArrayList<DigitalVideoDisc> cart = anOrder.getCart();
+
+        // Call the printOrderedItems method and pass the cart as an argument
+        DigitalVideoDisc.printOrderedItems(cart);
+        DigitalVideoDisc.searchDVDByTitle(cart);
     }
 }

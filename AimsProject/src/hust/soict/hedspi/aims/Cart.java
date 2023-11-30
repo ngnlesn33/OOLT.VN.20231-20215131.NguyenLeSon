@@ -1,13 +1,12 @@
-package Lab02.AimsProject.src;
+package AimsProject.src;
 
+
+import java.util.ArrayList;
 
 public class Cart {
     private final DigitalVideoDisc[] itemsOrdered = new DigitalVideoDisc[20];
     private int qtyOrdered = 0;
     public static final int MAX_NUMBERS_ORDERED = 20;
-
-    public Cart() {
-    }
 
     public void addDigitalVideoDisc(DigitalVideoDisc disc) {
         int duplicateIndex = -1;
@@ -43,11 +42,9 @@ public class Cart {
     }
 
     public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
-        DigitalVideoDisc[] var2 = dvdList;
         int var3 = dvdList.length;
 
-        for (int var4 = 0; var4 < var3; ++var4) {
-            DigitalVideoDisc disc = var2[var4];
+        for (DigitalVideoDisc disc : dvdList) {
             this.addDigitalVideoDisc(disc);
         }
 
@@ -93,5 +90,18 @@ public class Cart {
         }
 
         return currentCost;
+    }
+
+
+    public ArrayList<DigitalVideoDisc> getCart() {
+        ArrayList<DigitalVideoDisc> cartList = new ArrayList<>();
+
+        for (int i = 0; i < this.qtyOrdered; ++i) {
+            if (this.itemsOrdered[i] != null) {
+                cartList.add(this.itemsOrdered[i]);
+            }
+        }
+
+        return cartList;
     }
 }

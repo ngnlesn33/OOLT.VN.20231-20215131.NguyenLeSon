@@ -1,4 +1,4 @@
-package Lab02.AimsProject.src;
+package AimsProject.src;
 
 
 public class TestPassingParameter {
