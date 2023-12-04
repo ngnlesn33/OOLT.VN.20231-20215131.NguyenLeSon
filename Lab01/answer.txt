@@ -1,0 +1,13 @@
+6.1>
+- If the user chooses "Cancel", the program will return "You have chosen: No"
+- To customize the options to only two choices, such as "Yes" and "No", we can use method JOptionPane.showOptionDialog:
+
+ public static void main(String[] args) {
+         Object[] options = {"Yes", "No"};
+         int option = JOptionPane.showOptionDialog(null, "Do you want to change the first class ticket?", "Confirmation",
+                                                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+
+         String choice = (option == JOptionPane.YES_OPTION) ? "Yes" : "No";
+         JOptionPane.showMessageDialog(null, "You have chosen: " + choice);
+         System.exit(0);
+     }
