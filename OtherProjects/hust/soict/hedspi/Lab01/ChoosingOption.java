@@ -1,4 +1,4 @@
-package Lab01;
+package OtherProjects.hust.soict.hedspi.Lab01;
 
 import javax.swing.JOptionPane;
 

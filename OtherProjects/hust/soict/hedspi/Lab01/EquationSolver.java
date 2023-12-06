@@ -1,4 +1,4 @@
-package Lab01;
+package OtherProjects.hust.soict.hedspi.Lab01;
 
 import java.util.Scanner;
 
@@ -11,7 +11,6 @@ public class EquationSolver {
         System.out.println("2. First-degree equations with two variables");
         System.out.println("3. The second degree equation with one variable");
         int choice = scanner.nextInt();
-
         switch (choice) {
             case 1:
                 solveFirstDegreeEquation(scanner);
