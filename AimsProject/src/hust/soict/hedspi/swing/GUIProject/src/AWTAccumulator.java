@@ -1,4 +1,4 @@
-// This is a Java program that uses AWT to create a GUI that accumulates the sum of integers entered by the user
+package AimsProject.src.hust.soict.hedspi.swing.GUIProject.src;// This is a Java program that uses AWT to create a GUI that accumulates the sum of integers entered by the user
 
 import java.awt.*; // Import the AWT package for GUI components
 import java.awt.event.ActionEvent; // Import the ActionEvent class for handling user actions

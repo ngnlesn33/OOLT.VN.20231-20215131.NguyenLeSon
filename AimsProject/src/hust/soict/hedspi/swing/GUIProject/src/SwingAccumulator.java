@@ -1,3 +1,5 @@
+package AimsProject.src.hust.soict.hedspi.swing.GUIProject.src;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

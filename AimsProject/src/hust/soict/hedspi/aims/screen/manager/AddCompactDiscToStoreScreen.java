@@ -1,21 +1,17 @@
 package AimsProject.src.hust.soict.hedspi.aims.screen.manager;
 
-import AimsProject.src.hust.soict.hedspi.aims.media.Book;
 import AimsProject.src.hust.soict.hedspi.aims.media.CompactDisc;
 import AimsProject.src.hust.soict.hedspi.aims.media.Media;
-import AimsProject.src.hust.soict.hedspi.aims.media.Track;
 import AimsProject.src.hust.soict.hedspi.aims.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AddCompactDiscToStoreScreen extends AddItemToStoreScreen {
     // Instance variable to store the input field for authors
-    private JTextField artistsField;
-    private JTextField lengthField;
-    private JTextField directorsField;
+    private final JTextField artistsField;
+    private final JTextField lengthField;
+    private final JTextField directorsField;
     // Constructor for the AddBookToStoreScreen class
     public AddCompactDiscToStoreScreen(Store store) {
         // Call the constructor of the parent class

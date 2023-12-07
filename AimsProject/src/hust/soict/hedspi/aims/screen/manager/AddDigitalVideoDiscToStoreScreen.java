@@ -1,18 +1,17 @@
 // Import necessary packages
 package AimsProject.src.hust.soict.hedspi.aims.screen.manager;
-import AimsProject.src.hust.soict.hedspi.aims.media.Book;
+
 import AimsProject.src.hust.soict.hedspi.aims.media.DigitalVideoDisc;
 import AimsProject.src.hust.soict.hedspi.aims.media.Media;
 import AimsProject.src.hust.soict.hedspi.aims.store.Store;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 // Definition of the class for adding a book to the store
 public class AddDigitalVideoDiscToStoreScreen extends AddItemToStoreScreen {
     // Instance variable to store the input field for authors
-    private JTextField directorField;
-    private JTextField lengthField;
+    private final JTextField directorField;
+    private final JTextField lengthField;
     // Constructor for the AddBookToStoreScreen class
     public AddDigitalVideoDiscToStoreScreen(Store store) {
         // Call the constructor of the parent class
