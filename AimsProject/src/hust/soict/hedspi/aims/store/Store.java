@@ -12,7 +12,7 @@ public class Store {
 
     }
 
-    public void addMedia(Media media) {
+    public void addMediaToStore(Media media) {
         if (media != null && !this.itemsInStore.contains(media)) {
             this.itemsInStore.add(media);
             System.out.println("The media " + media.getTitle() + " has been added to the store.");
@@ -20,7 +20,7 @@ public class Store {
     }
 
 
-    public void removeMedia(Media media) {
+    public void removeMediaFromStore(Media media) {
         if (media != null && this.itemsInStore.contains(media)) {
             this.itemsInStore.remove(media);
             System.out.println("The media " + media.getTitle() + " has been removed from the store.");
