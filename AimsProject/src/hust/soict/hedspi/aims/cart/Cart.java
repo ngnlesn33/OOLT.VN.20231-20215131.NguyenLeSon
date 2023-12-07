@@ -53,12 +53,12 @@ public class Cart {
 //        }
 //    }
 
-    public void addMedia(Media media) {
+    public void addMediaToCart(Media media) {
         itemsOrdered.add(media);
-        System.out.println("The media " + media.getTitle() + " has been added.");
+        System.out.println("The media " + media.getTitle() + " has been added to cart.");
     }
 
-    public void removeMedia(Media media) {
+    public void removeMediaFromCart(Media media) {
         if (itemsOrdered.contains(media)) {
             itemsOrdered.remove(media);
             System.out.println("The media" + media.getTitle() + "has been removed.");

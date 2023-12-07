@@ -22,10 +22,20 @@ public class Aims {
         trackList.add(track1);
         trackList.add(track2);
         CompactDisc cd1 = new CompactDisc(3, "Thriller", "Pop", 15.95f, 42, "Michael Jackson", "Michael Jackson", trackList);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc(2, "The Lion King", "Animation", "Son", 5, 19.95f);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc(3, "The Lion King", "Animation", "Son", 5, 19.95f);
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc(4, "The Lion King", "Animation", "Son", 5, 19.95f);
+        DigitalVideoDisc dvd5 = new DigitalVideoDisc(5, "The Lion King", "Animation", "Son", 5, 19.95f);
+        DigitalVideoDisc dvd6 = new DigitalVideoDisc(6, "The Lion King", "Animation", "Son", 5, 19.95f);
 
-        store.addMedia(dvd1);
-        store.addMedia(book1);
-        store.addMedia(cd1);
+        store.addMediaToStore(dvd1);
+        store.addMediaToStore(dvd2);
+        store.addMediaToStore(dvd3);
+        store.addMediaToStore(dvd4);
+        store.addMediaToStore(dvd5);
+        store.addMediaToStore(dvd6);
+        store.addMediaToStore(book1);
+        store.addMediaToStore(cd1);
 
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
@@ -277,7 +287,7 @@ public class Aims {
     private static void checkAndAddToCart(Store store, Cart cart, String title) {
         Media media = store.getMedia(title);
         if (media != null) {
-            cart.addMedia(media);
+            cart.addMediaToCart(media);
             System.out.println("Media added to cart.");
 
             // If the media is a DVD, display the number of DVDs in the cart

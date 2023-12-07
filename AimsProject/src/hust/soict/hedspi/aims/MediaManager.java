@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class MediaManager {
     private final Store store;
-    private Scanner scanner;
+    private final Scanner scanner;
 
     public MediaManager(Store store) {
         this.scanner = new Scanner(System.in);
@@ -51,7 +51,7 @@ public class MediaManager {
         List<String> authors = new ArrayList<>(List.of(authorsLine.split(",")));
 
         Book book = new Book(id, title, category, cost, authors);
-        store.addMedia(book);
+        store.addMediaToStore(book);
     }
 
     private void addCD() {
@@ -68,7 +68,7 @@ public class MediaManager {
         // Assume tracks are added separately
 
         CompactDisc cd = new CompactDisc(id, title, category, cost, length, director, artist, new ArrayList<>());
-        store.addMedia(cd);
+        store.addMediaToStore(cd);
     }
 
     private void addDVD() {
@@ -82,7 +82,7 @@ public class MediaManager {
         float cost = scanner.nextFloat();
 
         DigitalVideoDisc dvd = new DigitalVideoDisc(id, title, category, director, length, cost);
-        store.addMedia(dvd);
+        store.addMediaToStore(dvd);
     }
 
     public void removeFromMedia() {
@@ -92,7 +92,7 @@ public class MediaManager {
 
         Media mediaToRemove = findMediaById(mediaId);
         if (mediaToRemove != null) {
-            store.removeMedia(mediaToRemove);
+            store.removeMediaFromStore(mediaToRemove);
             System.out.println("Media with ID " + mediaId + " has been removed.");
         } else {
             System.out.println("No media found with ID " + mediaId + ".");

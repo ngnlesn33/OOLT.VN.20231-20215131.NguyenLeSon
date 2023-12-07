@@ -4,7 +4,6 @@ package AimsProject.src.hust.soict.hedspi.aims.store;
 import AimsProject.src.hust.soict.hedspi.aims.media.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StoreTest {
@@ -24,12 +23,12 @@ public class StoreTest {
         CompactDisc cd1 = new CompactDisc(2, "Thriller", "Pop", 15.95f, 42, "Michael Jackson", "Michael Jackson", trackList);
 
         // Add the Media items to the store
-        myStore.addMedia(dvd1);
-        myStore.addMedia(book1);
-        myStore.addMedia(cd1);
+        myStore.addMediaToStore(dvd1);
+        myStore.addMediaToStore(book1);
+        myStore.addMediaToStore(cd1);
 
         // Remove a Media item from the store
-        myStore.removeMedia(dvd1);
+        myStore.removeMediaFromStore(dvd1);
 
         // Print the items in the store
         System.out.println("Items in store:");
