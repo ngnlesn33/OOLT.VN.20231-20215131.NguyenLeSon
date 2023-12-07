@@ -1,4 +1,4 @@
-// This is a Java program that uses Swing to create a GUI that displays a number grid and allows the user to enter and delete digits
+package AimsProject.src.hust.soict.hedspi.swing.GUIProject.src;// This is a Java program that uses Swing to create a GUI that displays a number grid and allows the user to enter and delete digits
 
 import javax.swing.*; // Import the Swing package for GUI components
 import java.awt.*; // Import the AWT package for layout and event handling
