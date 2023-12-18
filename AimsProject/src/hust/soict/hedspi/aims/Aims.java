@@ -1,6 +1,7 @@
 package AimsProject.src.hust.soict.hedspi.aims;
 
 import AimsProject.src.hust.soict.hedspi.aims.cart.Cart;
+import AimsProject.src.hust.soict.hedspi.aims.exception.PlayerException;
 import AimsProject.src.hust.soict.hedspi.aims.media.*;
 import AimsProject.src.hust.soict.hedspi.aims.store.Store;
 
@@ -11,7 +12,7 @@ public class Aims {
     private static final Cart cart = new Cart();
     public static final MediaManager mediaManager = new MediaManager(store);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws PlayerException {
         // Create some Media items
         DigitalVideoDisc dvd1 = new DigitalVideoDisc(1, "The Lion King", "Animation", "Son", 5, 19.95f);
         ArrayList<String> authors = new ArrayList<>(List.of("J.K. Rowling"));
@@ -73,7 +74,7 @@ public class Aims {
         System.out.println("Please choose a number: 0-1-2-3");
     }
 
-    public static void viewStore() {
+    public static void viewStore() throws PlayerException {
         store.printStore();
         storeMenu();
     }
@@ -149,11 +150,11 @@ public class Aims {
         int option = scanner.nextInt();
         switch (option) {
             case 1:
-                cart.getItemsOrder().sort(Media.COMPARE_BY_TITLE_COST);
+                cart.getItemsOrdered().sort(Media.COMPARE_BY_TITLE_COST);
                 cart.printCart();
                 break;
             case 2:
-                cart.getItemsOrder().sort(Media.COMPARE_BY_COST_TITLE);
+                cart.getItemsOrdered().sort(Media.COMPARE_BY_COST_TITLE);
                 cart.printCart();
                 break;
             case 0:
@@ -194,7 +195,7 @@ public class Aims {
         }
     }
 
-    public static void storeMenu() {
+    public static void storeMenu() throws PlayerException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Options: ");
         System.out.println("--------------------------------");
@@ -300,7 +301,7 @@ public class Aims {
         }
     }
 
-    public static void playMedia() {
+    public static void playMedia() throws PlayerException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the title of the media to play:");
         String title = scanner.nextLine();

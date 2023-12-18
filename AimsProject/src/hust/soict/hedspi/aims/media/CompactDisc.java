@@ -1,5 +1,7 @@
 package AimsProject.src.hust.soict.hedspi.aims.media;
 
+import AimsProject.src.hust.soict.hedspi.aims.exception.PlayerException;
+
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable {
@@ -59,11 +61,19 @@ public class CompactDisc extends Disc implements Playable {
     }
 
     @Override
-    public void play() {
-        System.out.println("Playing CD: " + this.getTitle());
-        System.out.println("CD length: " + this.getLength());
-        for (Track track : tracks) {
-            track.play();
+    public void play() throws PlayerException {
+        if (this.getLength() > 0) {
+            System.out.println("Playing CD: " + this.getTitle());
+            System.out.println("CD length: " + this.getLength());
+            for (Track track : tracks) {
+                try {
+                    track.play();
+                } catch (PlayerException e) {
+                    e.printStackTrace();
+                }
+            }
+        } else {
+            throw new PlayerException("ERROR: CD length is non-positive.");
         }
     }
 

@@ -2,12 +2,14 @@ package AimsProject.src.hust.soict.hedspi.aims.cart;
 
 
 import AimsProject.src.hust.soict.hedspi.aims.media.Media;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Cart {
-    private final ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private final ObservableList<Media> itemsOrdered = FXCollections.observableArrayList();
 
 
     public Cart() {
@@ -23,13 +25,13 @@ public class Cart {
         return currentCost;
     }
 
-    public ArrayList<Media> getItemsOrder() {
+    public ObservableList<Media> getItemsOrdered() {
         return this.itemsOrdered;
     }
 
     public void printCart() {
         System.out.println("***********************CART***********************");
-        for (Media item : this.getItemsOrder()) {
+        for (Media item : this.getItemsOrdered()) {
             if (item != null) {
                 System.out.println(item);
             }
@@ -41,7 +43,7 @@ public class Cart {
     // Method to search for DVDs in the cart by title and print the results.
 //    public void searchByTitle(String title) {
 //        boolean matchFound = false;
-//        for (Media item : this.getItemsOrder()) {
+//        for (Media item : this.getItemsOrdered()) {
 //            if (item != null && item.isMatch(title)) {
 //                System.out.println(item);
 //                matchFound = true;
@@ -69,7 +71,7 @@ public class Cart {
 
     public int getMediaCount(Class<?> mediaType) {
         int count = 0;
-        for (Media media : this.getItemsOrder()) {
+        for (Media media : this.getItemsOrdered()) {
             if (mediaType.isInstance(media)) {
                 count++;
             }
@@ -114,7 +116,16 @@ public class Cart {
         }
     }
 
-    public void emptyCart(){
+    public void emptyCart() {
         itemsOrdered.clear();
+    }
+
+    public void placeOrder(Cart cart) {
+        if (cart.getItemsOrdered().isEmpty()) {
+            System.out.println("The cart is empty. Cannot place order.");
+        } else {
+            System.out.println("Order placed successfully.");
+            cart.emptyCart();
+        }
     }
 }
