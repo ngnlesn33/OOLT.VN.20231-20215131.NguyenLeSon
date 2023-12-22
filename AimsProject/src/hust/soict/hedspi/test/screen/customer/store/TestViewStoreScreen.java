@@ -56,11 +56,7 @@ public class TestViewStoreScreen extends Application {
         store.addMediaToStore(dvd2);
         store.addMediaToStore(dvd3);
         store.addMediaToStore(dvd4);
-        store.addMediaToStore(dvd5);
-        store.addMediaToStore(dvd6);
-        store.addMediaToStore(dvd7);
-        store.addMediaToStore(book1);
-        store.addMediaToStore(cd1);
+        
 
         cart.addMediaToCart(dvd1);
         cart.addMediaToCart(dvd2);
